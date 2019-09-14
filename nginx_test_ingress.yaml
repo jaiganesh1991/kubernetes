@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    ingress.kubernetes.io/backends: '{"k8s-be-31599--36215a2aa4792246":"HEALTHY"}'
+    ingress.kubernetes.io/forwarding-rule: k8s-fw-default-hello-wolrd-test--36215a2aa4792246
+    ingress.kubernetes.io/target-proxy: k8s-tp-default-hello-wolrd-test--36215a2aa4792246
+    ingress.kubernetes.io/url-map: k8s-um-default-hello-wolrd-test--36215a2aa4792246
+  creationTimestamp: null
+  generation: 1
+  name: hello-wolrd-test
+  selfLink: /apis/extensions/v1beta1/namespaces/default/ingresses/hello-wolrd-test
+spec:
+  backend:
+    serviceName: hello-world-test
+    servicePort: 8080
+status:
+  loadBalancer: {}
